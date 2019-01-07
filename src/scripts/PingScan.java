@@ -39,23 +39,8 @@ public class PingScan {
         });
     }
 
-    public List<Future<String>> checkThisIP(String ipStart, String ipEnd) throws UnknownHostException {
+    public List<Future<String>> checkThisIP(String ipStart, String ipEnd)  {
 
-//        String ipStringStart;
-//        String ipStringEnd;
-//        String targetIpString;
-//        //my update
-//        ipStringStart = ipStart.substring(ipStart.lastIndexOf(".") + 1, ipStart.length());
-//        ipStringEnd = ipEnd.substring(ipEnd.lastIndexOf(".") + 1, ipEnd.length());
-//        targetIpString = ipStart.substring(0, ipStart.lastIndexOf(".") + 1);
-//        if (!ipStart.equals(ipEnd)) {
-//            for (int i = Integer.parseInt(ipStringStart); i <= Integer.parseInt(ipStringEnd); i++) {
-//                String currentIp = targetIpString + i;
-//                futures.add(runPingScan(es, currentIp));
-//            }
-//        } else {
-//            futures.add(runPingScan(es, ipStart));
-//        }
         IPAddress ip1 = new IPAddress(ipStart);
         IPAddress ip2 = new IPAddress(ipEnd);
 

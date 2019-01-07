@@ -70,28 +70,4 @@ public class IPAddress {
         return new IPAddress(value + 1);
     }
 
-    /**
-     * @param args
-     */
-//    public static void main(String[] args) {
-//
-//        IPAddress ip1 = new IPAddress("192.168.0.1");
-//
-//        System.out.println("ip1 = " + ip1);
-//
-//        IPAddress ip2 = new IPAddress("192.169.5.255");
-//
-//        System.out.println("ip2 = " + ip2);
-//
-//        System.out.println("Looping:");
-//
-//        do {
-//
-//            ip1 = ip1.next();
-//
-//            System.out.println(ip1);
-//
-//        } while (!ip1.equals(ip2));
-//
-//    }
 }

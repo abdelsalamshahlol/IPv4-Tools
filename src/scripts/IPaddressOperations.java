@@ -43,18 +43,18 @@ public class IPaddressOperations {
     //Country locator using geoIP library
     public String ipGeoLocation(String IP) {
         try {
-            String dir = "resources/";
-            String dbfile = "resources/GeoIP.dat";
-            //String dbfile = "C:\\Users\\Abdelsalam Shahlol\\Documents\\NetBeansProjects\\IP Tools\\resources/GeoIP.dat";
-            String location = "";
-            System.err.println(dbfile);
+
+            String dir = System.getProperty("user.dir");
+            String sep = System.getProperty("file.separator");
+            String dbfile = dir + sep + "GeoIP.dat";
+            String location ;
             LookupService cl = new LookupService(dbfile, LookupService.GEOIP_MEMORY_CACHE);
             location = cl.getCountry(IP).getName() + " " + cl.getCountry(IP).getCode();
             cl.close();
             return location;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "<html>Path to <b>Database</b> is invalid <br>or <b>Database</b> doesn't exsist !</html>", "Error processing " + IP, JOptionPane.ERROR_MESSAGE);
-            // return e.getMessage();
+            System.err.println(e.getMessage());
             return "";
         }
     }

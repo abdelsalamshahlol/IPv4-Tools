@@ -58,7 +58,7 @@ public class MacAddressOperations {
             Oui oui = reg.getOui(CheckMac);
             manufacturer = (oui.getManufacturer() == "" ? "Unknown" : oui.getManufacturer());
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.err.println(ex.getMessage());
         }
         return manufacturer;
     }

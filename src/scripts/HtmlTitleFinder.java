@@ -45,7 +45,7 @@ public class HtmlTitleFinder {
                     while ((inputLine = br.readLine()) != null) {
                         Document doc = (Document) Jsoup.parse(inputLine);
                         String title = doc.title();
-                        System.out.println(ip + " " + title);
+//                        System.out.println(ip + " " + title);
                         if (title != null) {
                             returnMe = title;
                             break;

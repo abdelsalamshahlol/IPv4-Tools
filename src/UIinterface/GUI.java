@@ -1316,14 +1316,14 @@ public class GUI extends javax.swing.JFrame {
                     if (publicIp.equals("Cannot find public IP please check the internet connection !")) {
                         JOptionPane.showMessageDialog(null, "Can you check the internet connection !", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-                    System.out.println("here in do backg " + publicIp);
+//                    System.out.println("here in do backg " + publicIp);
                     return publicIp;
                 }
 
                 @Override
                 protected void done() {
                     try {
-                        System.out.println("here in do backg " + get());
+//                        System.out.println("here in do backg " + get());
                         String result = get();
                         ip_for_location_field.setText(result);
                     } catch (InterruptedException ex) {
@@ -1359,10 +1359,10 @@ public class GUI extends javax.swing.JFrame {
         final String ipStart;
         final String regex = "(^10\\.)|(^172\\.1[6-9]\\.)|(^172\\.2[0-9]\\.)|(^172\\.3[0-1]\\.)|(^192\\.168\\.)|(^127\\.0\\.0\\.1)";
         final Pattern pattern = Pattern.compile(regex);
-        System.err.println(!st_IP_field.getText().isEmpty());
-        System.err.println(!endRangeAvailable);
-        System.err.println(ipOneValid);
-        System.err.println(ipOneValid);
+//        System.err.println(!st_IP_field.getText().isEmpty());
+//        System.err.println(!endRangeAvailable);
+//        System.err.println(ipOneValid);
+//        System.err.println(ipOneValid);
         if (ipOneValid && ipTwoValid || (!endRangeAvailable && !st_IP_field.getText().isEmpty())) {
             start_scan_btn.setEnabled(false);
             resolve_host_button.setEnabled(false);
@@ -1431,7 +1431,7 @@ public class GUI extends javax.swing.JFrame {
                                 tableModel.addRow(data);
                             }
                         } catch (Exception e) {
-                            System.out.println(e.getMessage());
+                            System.err.println(e.getMessage());
                         }
                     }
                     return activeIP;
@@ -1476,7 +1476,7 @@ public class GUI extends javax.swing.JFrame {
             try {
                 workerForScan.cancel(true);
             } catch (Exception e) {
-                System.out.println("EX " + e.getMessage());
+                System.err.println("EX " + e.getMessage());
             }
             progress_bar.setValue(333);
             stat_label.setText("Shutting threads");
@@ -1499,7 +1499,7 @@ public class GUI extends javax.swing.JFrame {
             try {
                 IPaddressOperations p = new IPaddressOperations();
                 String link = hostname_field.getText();
-                System.err.println(link);
+//                System.err.println(link);
                 if (!link.isEmpty()) {
                     String Result = p.returnIP(link);
                     st_IP_field.setValue(Result);
@@ -1822,7 +1822,7 @@ public class GUI extends javax.swing.JFrame {
             BufferedReader br = new BufferedReader(new FileReader(actualFile));
             BufferedWriter bw = new BufferedWriter(new FileWriter(tempFile));
             int row = this.jTable4.getSelectedRow();
-            System.err.println(row);
+//            System.err.println(row);
 
             if (row < jTable4.getRowCount() && row >= 0) {
                 String rowSelected = (String) jTable4.getValueAt(row, 0) + "," + jTable4.getValueAt(row, 1) + "," + jTable4.getValueAt(row, 2);
@@ -1845,7 +1845,7 @@ public class GUI extends javax.swing.JFrame {
             bw.close();
             if (actualFile.delete()) {
                 boolean successful = tempFile.renameTo(actualFile);
-                System.out.println(successful);
+//                System.out.println(successful);
                 JOptionPane.showMessageDialog(null, "Delete successful.", "Alert", JOptionPane.INFORMATION_MESSAGE);
 
             }
@@ -1915,7 +1915,7 @@ public class GUI extends javax.swing.JFrame {
             bw.close();
             if (actualFile.delete()) {
                 boolean successful = tempFile.renameTo(actualFile);
-                System.out.println(successful);
+//                System.out.println(successful);
             }
             JOptionPane.showMessageDialog(null, "Edit successful.", "Alert", JOptionPane.INFORMATION_MESSAGE);
             edtBmark_dialog.dispose();
